@@ -1,31 +1,32 @@
-<script setup>
-import { ref, watch } from 'vue'
-import { useRoute } from 'vue-router'
-
-const route = useRoute()
-const tab = ref(route.name)
-
-const items = [
-  { label: 'Domov', value: 'home', to: { name: 'home' } },
-  { label: 'O nás', value: 'about', to: { name: 'about' } },
-  { label: 'Produkty', value: 'products', to: { name: 'products' } },
-  { label: 'Prehliadky', value: 'tours', to: { name: 'tours' } },
-]
-
-watch(
-  () => route.name,
-  (name) => {
-    tab.value = name
-  }
-)
+<script>
+export default {
+  name: 'App',
+  data() {
+    return {
+      tab: this.$route.name,
+      items: [
+        { label: 'Domov', value: 'home', to: { name: 'home' } },
+        { label: 'O nás', value: 'about', to: { name: 'about' } },
+        { label: 'Produkty', value: 'products', to: { name: 'products' } },
+        { label: 'Prehliadky', value: 'tours', to: { name: 'tours' } },
+      ],
+    }
+  },
+  watch: {
+    $route(to) {
+      this.tab = to.name
+    },
+  },
+}
 </script>
 
 <template>
+  <header>
   <div class="container">
-    <v-card color="basil">
+    <v-card color="basil" class="main-card">
       <v-card-title class="text-center justify-center py-6">
         <h1 class="font-weight-bold text-h2 text-basil">
-          BASiL
+          MAdFOX 
         </h1>
       </v-card-title>
 
@@ -49,5 +50,12 @@ watch(
       </v-card>
     </v-card>
   </div>
+  </header>
 </template>
 
+<style scoped>
+.main-card {
+  width: auto;
+  height: auto;
+}
+</style>
