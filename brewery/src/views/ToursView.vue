@@ -3,7 +3,7 @@
   import Footer from '@/components/Footer.vue';
 
   export default{
-    name: 'AboutView',
+    name: 'ToorView',
     components: {
       CtaBanner,
       Footer,
@@ -13,7 +13,7 @@
 
 <template>
   
-  <h1>Stránka o nás</h1>
+  <h1>Stránka na rezerváciu prehliadok</h1>
 
 
   <footer>
