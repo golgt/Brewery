@@ -32,7 +32,7 @@ export default {
         },
         {
           title: 'Darčeky a merch',
-          copy: 'Fľaše, poháre a tričká pre fanúšikov Basil Brewery.',
+          copy: 'Fľaše, poháre a tričká pre fanúšikov MAdFOX Brewery.',
           icon: '🎁',
         },
       ],
