@@ -1,4 +1,9 @@
- 
+<script>
+  export default {
+    name: 'About',
+  }
+</script>
+
     <template>
       <main class="about">
         <section class="about__header">

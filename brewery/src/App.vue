@@ -9,6 +9,7 @@ export default {
         { label: 'O nás', value: 'about', to: { name: 'about' } },
         { label: 'Produkty', value: 'products', to: { name: 'products' } },
         { label: 'Prehliadky', value: 'tours', to: { name: 'tours' } },
+        { label: 'Kontakt', value: 'contact', to: { name: 'contact'} },
       ],
     }
   },
