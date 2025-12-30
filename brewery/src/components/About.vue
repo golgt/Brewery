@@ -1,15 +1,4 @@
-<script>
-    export default {
-      name: 'About',
-      props: {
-        cards: {
-            type: Array,
-            required: true,
-            },
-        },
-    }
-    </script>
-    
+ 
     <template>
       <main class="about">
         <section class="about__header">
@@ -70,38 +59,11 @@
             <span class="fact-card__label">Prehliadky týždenne</span>
             <span class="fact-card__value">3+</span>
           </div>
-        </section>
-
+        </section>  
         <section class="team">
             <div class="get_known">
                 <p class="eyebrow">Vedenie pivovaru</p>
                 <h2>Spoznajte náš hlavný tým</h2>
-
-                <v-card class="mx-auto" max-width="1000">
-                    <v-container fluid>
-                        <v-row dense>
-                            <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
-                                <v-card>
-                                    <v-img
-                                        :src="card.src"
-                                        class="align-end"
-                                        gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                                        height="700px"
-                                        cover
-                                    >
-                                    <v-card-title class="text-white">
-                                        {{ card.title }}
-                                    </v-card-title>
-                                    <v-card-subtitle class="text-white">
-                                        {{ card.subtitle }}
-                                    </v-card-subtitle>
-                                    </v-img>
-                                </v-card>
-                            </v-col>
-                        </v-row>
-                    </v-container>
-                </v-card>
-
             </div>
         </section>
       </main>

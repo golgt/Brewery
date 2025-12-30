@@ -2,6 +2,7 @@
   import About from '@/components/About.vue';
   import CtaBanner from '@/components/CtaBanner.vue';
   import Footer from '@/components/Footer.vue';
+  import Team from '@/components/Team.vue';
 
   export default{
     name: 'AboutView',
@@ -9,6 +10,7 @@
       CtaBanner,
       Footer,
       About,
+      Team,
     },
     data(){
       return{
@@ -29,7 +31,8 @@
 
 <template>
 
-  <About :cards="cards"/>
+  <About/>
+  <Team :cards="cards"/>
 
   <footer>
     <CtaBanner
