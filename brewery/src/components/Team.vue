@@ -11,7 +11,7 @@
 </script>
 
 <template>
-    <v-card class="mx-auto" max-width="1000">
+    <v-card class="mx-auto" max-width="900">
         <v-container fluid>
             <v-row dense>
                 <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
@@ -20,7 +20,7 @@
                                 :src="card.src"
                                 class="align-end"
                                 gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                                height="700px"
+                                height="500px"
                                 cover
                         >
                         <v-card-title class="text-white">
