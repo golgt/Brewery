@@ -1,6 +1,7 @@
 <script>
 import { useProductsStore } from '@/stores/counter'
 
+
 export default {
   name: 'Products',
   props: {
@@ -8,6 +9,14 @@ export default {
         type: Array,
         required: true,
     },
+    headerTitle:{
+        type: String,
+        required: true,
+    },
+    headerName:{
+        type: String,
+        required: true,
+    }
   },
   data() {
     return {
@@ -29,29 +38,27 @@ export default {
     addItems(item) {
       this.productsStore.addItems(item)
     },
-    removeItems(id) {
-      this.productsStore.removeItems(id)
-    },
   },
 }
 </script>
 
 <template>
   <main class="products">
-
-    <section>
-
-      <v-container fluid>
-        <v-row dense>
+    <section class="products-header">
+      <p class="eyebrow">{{ headerTitle }}</p>
+      <h1 class="product-title">{{ headerName }}</h1>
+      
+      <v-container class="products-container">
+        <v-row dense justify="center">
           <v-col
             v-for="item in items"
             :key="item.id"
             cols="12"
-            md="6"
+            md="5"
           >
-            <v-card class="mx-auto" max-width="1000">
+            <v-card class="mx-auto" max-width="650">
               <v-img
-                height="200px"
+                height="400px"
                 :src="item.src"
                 cover
               ></v-img>
@@ -93,56 +100,32 @@ export default {
       </v-container>
     </section>
 
-    <section class="cart-section">
-      <h2 class="section-title">Košík</h2>
-
-      <div v-if="productsStore.cartItems.length === 0" class="empty">Košík je prázdny.</div>
-
-      <v-card v-else class="mx-auto" max-width="800">
-        <v-list>
-          <v-list-item
-            v-for="item in productsStore.sortItems"
-            :key="item.id"
-          >
-            <v-list-item-title>{{ item.name }}</v-list-item-title>
-            <v-list-item-subtitle>
-              {{ item.price.toFixed(2) }} €
-            </v-list-item-subtitle>
-
-            <template #append>
-              <v-btn
-                color="error"
-                variant="text"
-                @click="removeItems(item.id)"
-              >
-                Odstrániť
-              </v-btn>
-            </template>
-          </v-list-item>
-        </v-list>
-      </v-card>
-    </section>
+    <Cart />
   </main>
 </template>
 
-<style scoped>
+<style>
 .products {
   display: grid;
   gap: 1.5rem;
+  
 }
 
-.section-title {
-  margin: 0 0 0.5rem;
-  font-size: 1.25rem;
-  font-weight: 700;
+.products-container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.empty {
-  color: #555;
-  font-style: italic;
+.products-header {
+  max-width: 1040px;
+  margin: 0 auto 1.5rem;
+  padding-top: 2rem;
 }
 
-.cart-section {
-  margin-top: 2rem;
+.products-title {
+  font-size: clamp(2rem, 3.4vw, 2.6rem);
+  margin: 0.4rem 0 0.6rem;
+  color: #2d2a32;
 }
+
 </style>
