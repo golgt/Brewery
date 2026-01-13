@@ -2,7 +2,7 @@
 import CtaBanner from '@/components/CtaBanner.vue';
 import Footer from '@/components/Footer.vue';
 import Products from '@/components/Products.vue';
-import Cart from '@/components/Cart.vue'
+import CartIcon from '@/components/CartIcon.vue'
 
 export default{
   name: 'ProductView',
@@ -10,7 +10,7 @@ export default{
     CtaBanner,
     Footer,
     Products,
-    Cart
+    CartIcon
   },
   data() {
     return {
@@ -38,6 +38,9 @@ export default{
 
 <template>
   <main>
+    <div class="products-header-bar">
+      <CartIcon />
+    </div>
     <Products headerTitle="Ponuka pivovaru"
     headerName="Ponuka pív"
     :items="productsForSale" 
@@ -46,7 +49,6 @@ export default{
     headerName="Darčekové predmety"
     :items="productsForSale2" 
      />
-    <Cart/>
     <footer>
       <CtaBanner
         heading="Navštívte náš pivovar už tento víkend"
@@ -59,12 +61,19 @@ export default{
 </template>
 
 <style>
-  @media (min-width: 1024px) {
-    .about {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-    }
+.products-header-bar {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 1000;
+}
+
+@media (min-width: 1024px) {
+  .about {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
   }
-  </style>
+}
+</style>
   

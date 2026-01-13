@@ -40,7 +40,7 @@
           <div class="about__block">
             <h2>Prečo MAdFOX?</h2>
             <p>
-              Líška pre nás symbolizuje zvedavosť, hravosť a inteligencia.
+              Líška pre nás symbolizuje zvedavosť, hravosť a inteligenciu.
               Chceme, aby naše pivá boli presne také – zvedavé v chutiach,
               hravé v štýloch a premyslené v detailoch.
             </p>

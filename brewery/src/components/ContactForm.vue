@@ -63,7 +63,7 @@
           />
   
           <v-btn type="submit" class="me-4">Potvrdiť</v-btn>
-          <v-btn @click="handleReset">Vyčistiť</v-btn>
+          <v-btn @click="resetForm">Vyčistiť</v-btn>
         </form>
       </div>
   
@@ -79,14 +79,28 @@
     </main>
   </template>
   
-  <script setup>
-    import { ref } from 'vue'
-    import { useField, useForm } from 'vee-validate'
+<script>
+import { useField, useForm } from 'vee-validate'
 
-    const showAlert = ref(false)
+export default {
+  name: 'ContactForm',
+  data() {
+    return {
+      showAlert: false,
+      items: [
+        'Otázka o produkte',
+        'PR/Mediálna spolupráca',
+        'Súťaže',
+        'Sponzoring',
+        'Kariéra',
+        'Iné',
+      ],
+    }
+  },
+  setup() {
     const { handleSubmit, handleReset } = useForm({
       validationSchema: {
-        name (value) {
+        name(value) {
           if (!value || value.length < 2) {
             return 'Meno musí mať aspoň 2 znaky.'
           }
@@ -95,7 +109,7 @@
           }
           return true
         },
-        phone (value) {
+        phone(value) {
           if (!value || !/^[0-9-]{7,}$/.test(value)) {
             return 'Telefónne číslo musí mať aspoň 7 čísel.'
           }
@@ -104,59 +118,65 @@
           }
           return true
         },
-        email (value) {
+        email(value) {
           if (/^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(value)) return true
-
           return 'E-mail musí byť skutočný.'
         },
-        select (value) {
+        select(value) {
           if (value) return true
-
           return 'Vyberte akciu.'
         },
-        msg (value){
-            if (!value || value.length < 5) {
-              return 'Správa by mala mať aspoň 5 znakov.'
-            }
-            if (value.length > 50) {
-              return 'Správa môže mať maximálne 50 znakov.'
-            }
-            return true
+        msg(value) {
+          if (!value || value.length < 5) {
+            return 'Správa by mala mať aspoň 5 znakov.'
+          }
+          if (value.length > 50) {
+            return 'Správa môže mať maximálne 50 znakov.'
+          }
+          return true
         },
-        checkbox (value) {
+        checkbox(value) {
           if (value === '1') return true
-  
           return 'Musíte potvrdiť.'
         },
       },
     })
+
     const name = useField('name')
     const phone = useField('phone')
     const email = useField('email')
     const select = useField('select')
     const msg = useField('msg')
     const checkbox = useField('checkbox')
-  
-    const items = ref([
-      'Otázka o produkte',
-      'PR/Mediálna spolupráca',
-      'Súťaže',
-      'Sponzoring',
-      'Kariéra',
-      'Iné',
-    ])
-  
-    const submit = handleSubmit(values => {
-      console.log(values)
 
-      showAlert.value = true
-      handleReset()
-
-      setTimeout(() => {
-        showAlert.value = false
-      }, 3000)
-    })
-  </script>
+    return {
+      name,
+      phone,
+      email,
+      select,
+      msg,
+      checkbox,
+      handleSubmit,
+      handleReset,
+    }
+  },
+  methods: {
+    submit() {
+      this.handleSubmit((values) => {
+        console.log(values)
+        this.showAlert = true
+        this.resetForm()
+        setTimeout(() => {
+          this.showAlert = false
+        }, 3000)
+      })()
+    },
+    resetForm() {
+      this.handleReset()
+    },
+  },
+}
+</script>
 
 <style>
     .contact-wrapper {
