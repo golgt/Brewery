@@ -22,6 +22,12 @@ a,
   padding: 3px;
 }
 
+.logo {
+  width: 6%;
+  height: 6%;
+  object-fit: cover;
+}
+
 @media (min-width: 1024px) {
   body {
     display: flex;
