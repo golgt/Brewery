@@ -1,6 +1,11 @@
 <script>
+  import AgeGate from './components/AgeGate.vue';
+
 export default {
   name: 'App',
+  components: {
+    AgeGate
+  },
   data() {
     return {
       tab: this.$route.name,
@@ -11,7 +16,17 @@ export default {
         { label: 'Prehliadky', value: 'tours', to: { name: 'tours' } },
         { label: 'Kontakt', value: 'contact', to: { name: 'contact'} },
       ],
+      accepted: false,
+      denied: false
     }
+  },
+  methods: {
+    onAccepted(){
+      this.accepted = true
+    },
+    onDenied(){
+      this.denied = true
+    },
   },
   watch: {
     $route(to) {
@@ -22,6 +37,11 @@ export default {
 </script>
 
 <template>
+<age-gate v-if="!accepted && !denied"
+    @accepted="onAccepted"
+    @denied="onDenied"/>
+
+  <div v-if="accepted" >
   <header>
   <div class="container">
     <v-card color="basil" class="main-card">
@@ -53,11 +73,24 @@ export default {
     </v-card>
   </div>
   </header>
+  </div> 
+
+  <div v-if="denied" class="not-found">
+    <h1>404 page not found</h1>
+    <p>Obsah je dostupný pre osoby staršie ako 18 rokov.</p>
+  </div>
 </template>
 
-<style scoped>
+<style>
 .main-card {
   width: auto;
   height: auto;
+}
+.not-found{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 </style>
