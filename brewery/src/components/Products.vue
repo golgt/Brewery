@@ -66,7 +66,7 @@ export default {
               <v-card-title>{{ item.name }}</v-card-title>
 
               <v-card-subtitle>
-                {{ item.price.toFixed(2) }} €
+                {{ item.price.toFixed(2) }} € {{ item.packageSize }} 
               </v-card-subtitle>
 
               <v-card-actions>
