@@ -16,12 +16,12 @@
       return{
         cards:[
         { title: 'Marián Full', subtitle: 'Pivovarník', src: '@/assets/img/pivovarnik.jpg', flex: 12 },
-        { title: 'Petra Nováková', subtitle: 'PR', src: '@/assets//img/pr.jpg', flex: 4 },
+        { title: 'Petra Nováková', subtitle: 'PR', src: '@/assets/img/pr.jpg', flex: 4 },
         { title: 'Tomáš Kováč', subtitle: 'Pivný someliér', src: '@/assets//img/somelier.jpg', flex: 4 },
-        { title: 'Lucia Horváthová', subtitle: 'Vedúca výroby', src: '@/assets//img/vyroba.jpg', flex: 4 },
-        { title: 'Martin Blaško', subtitle: 'Technik', src: '@/assets//img/technik.jpg', flex: 4 },
-        { title: 'Zuzana Šimková', subtitle: 'Kontrola kvality', src: '@/assets//img/kontrola.jpg', flex: 4 },
-        { title: 'Karol Krabiva', subtitle: 'Obchod', src: '@/assets//img/obchodnik.jpg', flex: 4 },
+        { title: 'Lucia Horváthová', subtitle: 'Vedúca výroby', src: '@/assets/img/vyroba.jpg', flex: 4 },
+        { title: 'Martin Blaško', subtitle: 'Technik', src: '@/assets/img/technik.jpg', flex: 4 },
+        { title: 'Zuzana Šimková', subtitle: 'Kontrola kvality', src: '@/assets/img/kontrola.jpg', flex: 4 },
+        { title: 'Karol Krabiva', subtitle: 'Obchod', src: '@/assets/img/obchodnik.jpg', flex: 4 },
         ],
       }
     }
