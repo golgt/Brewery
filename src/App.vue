@@ -46,7 +46,7 @@ export default {
   <div class="container">
     <v-card color="basil" class="main-card">
       <v-card-title class="text-center justify-center py-6">
-        <img src="/Brewery/img/madfoxLOGO.jpg" alt="MAdFOX Brewery" class="logo">
+        <img src="/img/madfoxLOGO.jpg" alt="MAdFOX Brewery" class="logo">
       <h1 class="font-weight-bold text-h2 text-basil">MAdFOX Brewery</h1>
       </img>
       
