@@ -15,10 +15,10 @@
     data(){
       return {
         tours: [
-          { id: 13, name: 'Základná prehliadka', price: 20, packageSize:'na osobu', src: '../assets/img/zaklad.jpg', description: 'Nahliadnite do zákulisia výroby piva a spoznajte celý proces od sladu až po pohár. Ideálna voľba pre tých, ktorí chcú zažiť pivovar po prvýkrát.' },
-          { id: 14, name: 'Degustačná prehliadka', price: 26, packageSize:'na osobu', src: '../assets/img/degustacia.jpg', description: 'Prehliadka pivovaru spojená s riadenou degustáciou vybraných pív MAdFOX Brewery. Objavíte rozdiely medzi jednotlivými štýlmi a naučíte sa, ako si pivo správne vychutnať.' },
-          { id: 15, name: 'Sládková prehliadka', price: 35, packageSize:'na osobu', src: '../assets/img/sladkova.jpg', description: 'Exkluzívna prehliadka vedená naším sládkom, ktorý vám prezradí detaily výroby, zaujímavosti a pivné tajomstvá. Zážitok pre skutočných nadšencov a zvedavcov.' },
-          { id: 16, name: 'Zážitková prehliadka', price: 45, packageSize:'na osobu', src: '../assets/img/zazitkova.jpg', description: 'Kompletný relaxačný balík spájajúci prehliadku pivovaru, degustáciu a originálny pivný kúpeľ. Ideálna voľba pre výnimočné príležitosti a darčekové zážitky.' },
+          { id: 13, name: 'Základná prehliadka', price: 20, packageSize:'na osobu', src: '/Brewery/img/zaklad.jpg', description: 'Nahliadnite do zákulisia výroby piva a spoznajte celý proces od sladu až po pohár. Ideálna voľba pre tých, ktorí chcú zažiť pivovar po prvýkrát.' },
+          { id: 14, name: 'Degustačná prehliadka', price: 26, packageSize:'na osobu', src: '/Brewery/img/degustacia.jpg', description: 'Prehliadka pivovaru spojená s riadenou degustáciou vybraných pív MAdFOX Brewery. Objavíte rozdiely medzi jednotlivými štýlmi a naučíte sa, ako si pivo správne vychutnať.' },
+          { id: 15, name: 'Sládková prehliadka', price: 35, packageSize:'na osobu', src: '/Brewery/img/sladkova.jpg', description: 'Exkluzívna prehliadka vedená naším sládkom, ktorý vám prezradí detaily výroby, zaujímavosti a pivné tajomstvá. Zážitok pre skutočných nadšencov a zvedavcov.' },
+          { id: 16, name: 'Zážitková prehliadka', price: 45, packageSize:'na osobu', src: '/Brewery/img/zazitkova.jpg', description: 'Kompletný relaxačný balík spájajúci prehliadku pivovaru, degustáciu a originálny pivný kúpeľ. Ideálna voľba pre výnimočné príležitosti a darčekové zážitky.' },
         ]
       }
     }
