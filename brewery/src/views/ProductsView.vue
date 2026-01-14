@@ -44,8 +44,7 @@ export default{
     <v-alert
       type="info"
       variant="tonal"
-      class="mb-6"
-    >
+      class="mb-6">
       Na e-shope sa produkty predávajú výhradne ako balenia.
     </v-alert>
     <Products headerTitle="Ponuka pivovaru"
