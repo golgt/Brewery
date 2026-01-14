@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ] # alebo master, podľa toho čo používate
+    branches: [ tours ] # alebo master, podľa toho čo používate
 
 permissions:
   contents: read
