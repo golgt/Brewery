@@ -51,7 +51,7 @@ export default {
 
   </section>
   <div class="hero__image" aria-hidden="true">
-    <img class="homePic" src="@/assets/img/HomeObr.png"></img>
+    <img class="homePic" src="../assets/img/HomeObr.png"></img>
       <div class="badge">
         <span class="badge__title">MAdFOX Brewery</span>
         <span class="badge__meta">Est. 1998</span>
