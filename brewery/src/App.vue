@@ -1,85 +1,63 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+<script>
+export default {
+  name: 'App',
+  data() {
+    return {
+      tab: this.$route.name,
+      items: [
+        { label: 'Domov', value: 'home', to: { name: 'home' } },
+        { label: 'O nás', value: 'about', to: { name: 'about' } },
+        { label: 'Produkty', value: 'products', to: { name: 'products' } },
+        { label: 'Prehliadky', value: 'tours', to: { name: 'tours' } },
+        { label: 'Kontakt', value: 'contact', to: { name: 'contact'} },
+      ],
+    }
+  },
+  watch: {
+    $route(to) {
+      this.tab = to.name
+    },
+  },
+}
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <div class="container">
+    <v-card color="basil" class="main-card">
+      <v-card-title class="text-center justify-center py-6">
+        <img src="/img/madfoxLOGO.jpg" alt="MAdFOX Brewery" class="logo">
+      <h1 class="font-weight-bold text-h2 text-basil">MAdFOX Brewery</h1>
+      </img>
+      
+      </v-card-title>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <v-tabs
+        v-model="tab"
+        color="basil"
+        grow
+      >
+        <v-tab
+          v-for="item in items"
+          :key="item.label"
+          :to="item.to"
+          :value="item.value"
+        >
+          {{ item.label }}
+        </v-tab>
+      </v-tabs>
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
+      <v-card color="basil" flat>
+        <router-view />
+      </v-card>
+    </v-card>
+  </div>
   </header>
-
-  <RouterView />
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+.main-card {
+  width: auto;
+  height: auto;
 }
 </style>
